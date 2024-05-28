@@ -1,7 +1,7 @@
 import qrcode
 import pyautogui as pg
 
-def generate_qr_code(data, filename):
+def generate_qr_code(data, filename):                       # Function for the QR code
     qr = qrcode.QRCode(
         version=1,
         error_correction=qrcode.constants.ERROR_CORRECT_L,
@@ -15,9 +15,9 @@ def generate_qr_code(data, filename):
     img.save(filename)
 
 if __name__ == "__main__":
-    data = pg.prompt("Enter the data to encode: ")
-    fn = pg.prompt("Enter the name to save the QR code : ")
+    data = pg.prompt("Enter the data to encode: ")                  # Prompts for the url
+    fn = pg.prompt("Enter the name to save the QR code : ")         # Prompts for the filename
     fn += ".png"
 
-    generate_qr_code(data, fn)
+    generate_qr_code(data, fn)                                      # Generates the QR code
     print("QR code generated successfully!")
